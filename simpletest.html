@@ -1,20 +1,46 @@
 <html>
-  <head>
+
+<head>
     <style type="text/css">
-    html, body { height: 100%; margin: 0; padding: 0; }
-    #map { height: 100%; }
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #map {
+        height: 100%;
+    }
     </style>
-  </head>
-  <body>
-    <div></div>
+</head>
+
+<body>
+    <div id="map"></div>
     <script>
     function initMap() {
-    // TODO: use a constructor to create a new map JS object. You can use the coordinates
-    // we used, 40.7413549, -73.99802439999996 or your own!
+        // TODO: use a constructor to create a new map JS object. You can use the coordinates
+        // we used, 40.7413549, -73.99802439999996 or your own!
+        myLatLng = {
+            lat: 42.6594090,
+            lng: -73.7858250
+        }
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 17
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+        });
     }
     </script>
     <!--TODO: Load the JS API ASYNCHRONOUSLY below.-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtF2rVdpd2mrHcYH7bnziiQ5PcRrJQsNE&v=3&callback=initMap"></script>
     <script>
     </script>
-  </body>
+</body>
+
 </html>
